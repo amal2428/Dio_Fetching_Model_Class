@@ -52,10 +52,10 @@ class _MyHomePageState extends State<MyHomePage> {
       print(response);
       if (response.statusCode == 200 || response.statusCode == 201) {
         ResponseModel jsonObject = ResponseModel.fromJson(response.data);
-        int randomMovieLength = Random().nextInt(jsonObject.results.length);
+        int randomNumber = Random().nextInt(jsonObject.results.length);
 
         setState(() {
-          movieTitle = jsonObject.results[randomMovieLength].originalTitle;
+          movieTitle = jsonObject.results[randomNumber].originalTitle;
           print(movieTitle);
         });
       } else {
